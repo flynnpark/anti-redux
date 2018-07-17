@@ -15,7 +15,7 @@ class AppContainer extends Component {
         '2': {
           id: 2,
           text: 'Something else',
-          seen: false
+          seen: true
         },
         '3': {
           id: 3,
