@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import Flex, { FlexItem } from 'styled-flex-component';
 import FontAwesome from 'react-fontawesome';
-import Store from 'store';
 
 const Notificaion = styled.div`
   background-color: white;
@@ -56,18 +55,12 @@ const Button = styled.button`
 const NotificationPresenter = ({ id, text, seen }) => (
   <Notificaion seen={seen}>
     <Flex alignCenter justifyBetween>
-      <Title>
-        <Store.Consumer>{store => store.message}</Store.Consumer>
-      </Title>
+      <Title>{text}</Title>
       <FlexItem>
         <Fragment>
-          <Store.Consumer>
-            {store => (
-              <Button success seen={seen} onClick={store.changeMessage}>
-                <FontAwesome name="check" />
-              </Button>
-            )}
-          </Store.Consumer>
+          <Button success seen={seen} onClick={() => {}}>
+            <FontAwesome name="check" />
+          </Button>
           <Button danger seen={seen} onClick={() => {}}>
             <FontAwesome name="times" />
           </Button>
