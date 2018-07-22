@@ -11,7 +11,7 @@ class AppContainer extends Component {
         return newState;
       });
     };
-    this._seeNotificaion = id => {
+    this._toggleNotification = id => {
       this.setState(currentState => {
         return {
           ...currentState,
@@ -19,7 +19,7 @@ class AppContainer extends Component {
             ...currentState.notifications,
             [id]: {
               ...currentState.notifications[id],
-              seen: true
+              seen: currentState.notifications[id].seen === true ? false : true
             }
           }
         };
@@ -44,7 +44,7 @@ class AppContainer extends Component {
         }
       },
       deleteNotification: this._deleteNotification,
-      seeNotification: this._seeNotificaion
+      toggleNotification: this._toggleNotification
     };
   }
   render() {

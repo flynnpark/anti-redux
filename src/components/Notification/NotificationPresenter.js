@@ -66,7 +66,7 @@ const NotificationPresenter = ({ id, text, seen }) => (
                   success
                   seen={seen}
                   onClick={() => {
-                    store.seeNotification(id);
+                    store.toggleNotification(id);
                   }}
                 >
                   <FontAwesome name="check" />
